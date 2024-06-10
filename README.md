@@ -1,26 +1,22 @@
-## [NEXTSTEP 플레이그라운드의 미션 진행 과정](https://github.com/next-step/nextstep-docs/blob/master/playground/README.md)
-
----
-## 학습 효과를 높이기 위해 추천하는 미션 진행 방법
-
----
-1. 피드백 강의 전까지 미션 진행 
-> 피드백 강의 전까지 혼자 힘으로 미션 진행. 미션을 진행하면서 하나의 작업이 끝날 때 마다 add, commit
-> 예를 들어 다음 숫자 야구 게임의 경우 0, 1, 2단계까지 구현을 완료한 후 push
-
-![mission baseball](https://raw.githubusercontent.com/next-step/nextstep-docs/master/playground/images/mission_baseball.png)
-
----
-2. 피드백 앞 단계까지 미션 구현을 완료한 후 피드백 강의를 학습한다.
-
----
-3. Git 브랜치를 master 또는 main으로 변경한 후 피드백을 반영하기 위한 새로운 브랜치를 생성한 후 처음부터 다시 미션 구현을 도전한다.
-
-```
-git branch -a // 모든 로컬 브랜치 확인
-git checkout master // 기본 브랜치가 master인 경우
-git checkout main // 기본 브랜치가 main인 경우
-
-git checkout -b 브랜치이름
-ex) git checkout -b apply-feedback
-```
+=========================
+NextStep 플레이 그라운드 TDD 관련 사항
+1. 강의 페이지: https://edu.nextstep.camp/c/9WPRB0ys/
+2. 미션 기간: 6월 10일 ~ 7월 8일
+3. 미션 진행 방법: 매주 아래 미션 진행하기
+1. 단위 테스트, 메소드 분리
+2. TDD, 클래스 분리
+3. 상속과 인터페이스
+4. 함수형 프로그래밍, 스트림, 람다
+   개별 프로젝트 생성 -> 각 미션에 대한 PR 생성 -> PR에 대한 코드 리뷰 후 통과가 되면 머지 후 다음 미션 진행
+4. 미션 진행 중 지켜야 할 클린 코드 규칙
+   규칙 1: 한 메서드에 오직 한 단계의 들여쓰기(indent)만 한다.
+   규칙 2: else 예약어를 쓰지 않는다.
+   규칙 3: 모든 원시값과 문자열을 포장한다.
+   규칙 4: 한 줄에 점을 하나만 찍는다.
+   규칙 5: 줄여쓰지 않는다(축약 금지).
+   규칙 6: 모든 엔티티를 작게 유지한다.
+   규칙 7: 3개 이상의 인스턴스 변수를 가진 클래스를 쓰지 않는다.
+   규칙 8: 일급 콜렉션을 쓴다.
+   규칙 9: 게터/세터/프로퍼티를 쓰지 않는다.
+5. 미션 진행 중 지켜야 할 TDD 규칙
+   규칙1. Out -> In 방식이 아닌 In -> Out 방식으로의 TDD 진행

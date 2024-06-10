@@ -73,5 +73,6 @@ public class StringTest {
         Assertions.assertThat(charAtB).isEqualTo(b);
         Assertions.assertThat(charAtC).isEqualTo(c);
         Assertions.assertThatThrownBy(methodThatThrowsIndexOutOfBoundsException::run).isInstanceOf(IndexOutOfBoundsException.class);
+
     }
 }

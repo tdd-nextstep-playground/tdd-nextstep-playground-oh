@@ -1,5 +1,6 @@
 package study;
 
+import calculator.ArithmeticOperations;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.params.ParameterizedTest;

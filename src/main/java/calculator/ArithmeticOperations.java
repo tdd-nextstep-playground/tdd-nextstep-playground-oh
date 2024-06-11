@@ -1,4 +1,4 @@
-package study;
+package calculator;
 
 /**
  * Created by Robin on 2024/06/11.

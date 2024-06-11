@@ -9,6 +9,7 @@ import org.junit.jupiter.params.provider.CsvSource;
  * Created by Robin on 2024/06/12.
  * Description : ArithmeticOperator 클래스로 계산하는 계산기 테스트
  */
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 class ArithmeticOperatorCalculatorTest {
 
     @Order(1)
@@ -23,7 +24,7 @@ class ArithmeticOperatorCalculatorTest {
         org.assertj.core.api.Assertions.assertThat(calculatedResult).isEqualTo(expected);
     }
 
-    @Order(1)
+    @Order(2)
     @DisplayName("사칙연산 존재하지 않는 연산자일때, IllegalArgumentException 반환 확인.")
     @ParameterizedTest
     @CsvSource(value = {"3.0:%:-2.0", "3:_:1", "13:=:13", "144:@:4"}, delimiter = ':')

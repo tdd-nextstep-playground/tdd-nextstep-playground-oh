@@ -1,4 +1,4 @@
-package study.calculator;
+package calculator;
 
 import calculator.ArithmeticOperations;
 import org.assertj.core.api.Assertions;

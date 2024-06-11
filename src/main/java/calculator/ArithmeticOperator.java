@@ -1,6 +1,4 @@
-package study.calculator;
-
-import calculator.ArithmeticOperations;
+package calculator;
 
 /**
  * Created by Robin on 2024/06/12.

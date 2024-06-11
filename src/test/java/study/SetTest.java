@@ -26,6 +26,7 @@ public class SetTest {
         numbers.add(3);
     }
 
+    @Order(1)
     @Test
     @DisplayName("Set의 크기를 확인.")
     void size_메서드_테스트() {

@@ -14,7 +14,6 @@ import java.util.Set;
  * Description :
  */
 
-@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class SetTest {
     private Set<Integer> numbers;
 
@@ -27,7 +26,6 @@ public class SetTest {
         numbers.add(3);
     }
 
-    @Order(1)
     @Test
     @DisplayName("Set의 크기를 확인.")
     void size_메서드_테스트() {
@@ -39,7 +37,6 @@ public class SetTest {
         Assertions.assertThat(size).isEqualTo(result);
     }
 
-    @Order(2)
     @DisplayName("Set에 1, 2, 3 값이 존재하는지 확인.")
     @ParameterizedTest
     @ValueSource(ints = {1, 2, 3})
@@ -50,7 +47,6 @@ public class SetTest {
         Assertions.assertThat(isContained).isTrue();
     }
 
-    @Order(3)
     @DisplayName("Set에 입력 값이 존재하는지 확인. 입력 값에 따라 결과 값이 다른 경우 확인.")
     @ParameterizedTest
     @CsvSource(value = {"1:true", "2:true", "3:true", "4:false", "5:false"}, delimiter = ':')

@@ -7,22 +7,29 @@ import java.util.Queue;
  * Description : 먼저 받은 순서 대로 계산 하는 계산기 클래스 구현
  */
 public class SequentialCalculator {
-    private final Queue<Integer> numbers;
+    private final Queue<Double> operands;
     private final Queue<Character> operators;
 
-    public SequentialCalculator(Queue<Integer> numbers, Queue<Character> operators) {
-        this.numbers = numbers;
+    public SequentialCalculator(Queue<Double> operands, Queue<Character> operators) {
+        this.operands = operands;
         this.operators = operators;
     }
 
-    public Integer calculate() {
-        Integer operand1 = numbers.remove();
-        while (!numbers.isEmpty()) {
-            Integer operand2 = numbers.remove();
-            Character operator = operators.remove();
-            ArithmeticOperatorCalculator calculator = new ArithmeticOperatorCalculator(operand1, operand2, operator);
-            operand1 = (int) Math.floor(calculator.calculate());
+    public double calculate() {
+        if (operands.size() < 2 || operands.size() != operators.size() + 1) {
+            throw new IllegalStateException("Insufficient operands or invalid operators.");
         }
-        return operand1;
+
+        double result = operands.remove();
+        while (!operands.isEmpty()) {
+            Double secondOperand = operands.remove();
+            Character operator = operators.remove();
+            result = performOperation(result, secondOperand, operator);
+        }
+        return result;
+    }
+
+    private double performOperation(double operand1, double operand2, Character operator) {
+        return new ArithmeticOperatorCalculator(operand1, operand2, operator).calculate();
     }
 }

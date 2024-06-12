@@ -14,11 +14,11 @@ public class CalculatorMain {
         String text = scanner.nextLine();
         System.out.printf("입력된 문자열은 %s 입니다.%n", text);
 
-        SequentialInputReader inputSequentialReader = SequentialInputReader.loadReader(text);
-        Queue<Integer> numbers = inputSequentialReader.getNumbers();
+        OperandOperatorParser inputSequentialReader = OperandOperatorParser.parse(text);
+        Queue<Double> operands = inputSequentialReader.getOperands();
         Queue<Character> operators = inputSequentialReader.getOperators();
-        SequentialCalculator calculator = new SequentialCalculator(numbers, operators);
-        Integer result = calculator.calculate();
+        SequentialCalculator calculator = new SequentialCalculator(operands, operators);
+        double result = calculator.calculate();
 
         System.out.printf("%s = %s%n", text, result);
     }

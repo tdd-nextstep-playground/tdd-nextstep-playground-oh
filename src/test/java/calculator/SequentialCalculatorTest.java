@@ -18,21 +18,21 @@ class SequentialCalculatorTest {
     @DisplayName("순차적 계산 올바르게 수행되는지 확인.")
     void testSequentialCalculator() {
         //TODO: Given
-        Queue<Integer> numbers = new LinkedList<>();
-        numbers.add(3);
-        numbers.add(5);
-        numbers.add(2);
-        numbers.add(6);
+        Queue<Double> operands = new LinkedList<>();
+        operands.add(3.0);
+        operands.add(5.0);
+        operands.add(2.0);
+        operands.add(6.0);
 
         Queue<Character> operators = new LinkedList<>();
         operators.add('+');
         operators.add('*');
         operators.add('-');
 
-        SequentialCalculator calculator = new SequentialCalculator(numbers, operators);
+        SequentialCalculator calculator = new SequentialCalculator(operands, operators);
 
         //TODO: When
-        Integer calculate = calculator.calculate();
+        double calculate = calculator.calculate();
 
         //TODO: Then
         assertEquals(10, calculate);

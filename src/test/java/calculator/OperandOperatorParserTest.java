@@ -11,16 +11,16 @@ import static org.junit.jupiter.api.Assertions.*;
  * Created by Robin on 2024/06/12.
  * Description : SequentialInputReader 테스트
  */
-class SequentialInputReaderTest {
+class OperandOperatorParserTest {
     @Test
     @DisplayName("피연산자와 연산자를 올바르게 읽어오는지 확인.")
     void testSequentialInputReader() {
         //TODO: Given
         String input = "3+5*2-6";
-        SequentialInputReader reader = SequentialInputReader.loadReader(input);
+        OperandOperatorParser reader = OperandOperatorParser.parse(input);
 
         //TODO: When
-        Queue<Integer> numbers = reader.getNumbers();
+        Queue<Double> numbers = reader.getOperands();
         Queue<Character> operators = reader.getOperators();
 
         //TODO: Then

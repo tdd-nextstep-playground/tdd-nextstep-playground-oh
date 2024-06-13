@@ -5,8 +5,10 @@ import org.junit.jupiter.api.*;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class StringTest {
     @Test
+    @Order(0)
     void replace() {
         String actual = "abc".replace("b", "d");
         assertThat(actual).isEqualTo("adc");
@@ -89,6 +91,4 @@ public class StringTest {
         //then
         Assertions.assertThatThrownBy(methodThatThrowsIndexOutOfBoundsException::run).isInstanceOf(IndexOutOfBoundsException.class);
     }
-
-
 }

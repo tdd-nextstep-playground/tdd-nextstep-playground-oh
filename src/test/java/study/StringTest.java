@@ -91,5 +91,4 @@ public class StringTest {
         //then
         Assertions.assertThatThrownBy(methodThatThrowsIndexOutOfBoundsException::run).isInstanceOf(IndexOutOfBoundsException.class);
     }
-
 }
